@@ -26,7 +26,7 @@ public class ShopService {
     public static void main(String[] args) throws Exception {
 
         // Connect to Firebase database
-        FileInputStream serviceAccount = new FileInputStream("jeh-demo-firebase-adminsdk.json");
+        FileInputStream serviceAccount = new FileInputStream("firebase.json");
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .setDatabaseUrl("https://jeh-demo.firebaseio.com").build();
