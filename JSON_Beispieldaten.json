@@ -1,0 +1,318 @@
+{
+	"Fitnessstudio": {
+		"Trainer": [
+			{
+				"@AnschriftID": "Anschrift11",
+				"@TrainerNr": "Trainer11",
+				"Vorname": "Peter",
+				"Nachname": "Petersen",
+				"GebDatum": "1977-08-13",
+				"Geschlecht": "Männlich",
+				"Bankverbindung_Iban": 9191919191
+			},
+			{
+				"@AnschriftID": "Anschrift22",
+				"@TrainerNr": "Trainer22",
+				"Vorname": "Daniel",
+				"Nachname": "Figia",
+				"GebDatum": "1995-02-02",
+				"Geschlecht": "männlich",
+				"Bankverbindung_Iban": "DE12345678912365"
+			},
+			{
+				"@AnschriftID": "Anschrift30",
+				"@TrainerNr": "Trainer30",
+				"Vorname": "Jens",
+				"Nachname": "Jürgensen",
+				"GebDatum": "1970-08-13",
+				"Geschlecht": "Männlich",
+				"Bankverbindung_Iban": "DE123456789123"
+			},
+			{
+				"@AnschriftID": "Anschrift32",
+				"@TrainerNr": "Trainer31",
+				"Vorname": "Joachim",
+				"Nachname": "Meier",
+				"GebDatum": "1970-08-13",
+				"Geschlecht": "Männlich",
+				"Bankverbindung_Iban": "DE123456789323"
+			}
+		],
+		"Kompetenz": [
+			{
+				"@KursID": "Kurs11",
+				"@TrainerID": "Trainer11",
+				"@KompetenzNr": "Kompetenz11"
+			},
+			{
+				"@KursID": "Kurs22",
+				"@TrainerID": "Trainer22",
+				"@KompetenzNr": "Kompetent22"
+			},
+			{
+				"@KursID": "Kurs30",
+				"@TrainerID": "Trainer30",
+				"@KompetenzNr": "Kompetenz30"
+			},
+			{
+				"@KursID": "Kurs31",
+				"@KompetenzNr": "Kompetenz31"
+			}
+		],
+		"Kurs": [
+			{
+				"@KursNr": "Kurs11",
+				"Name": "AusdauerKurs",
+				"MaxTeilnehmer": 5,
+				"Wochentag": "Montag"
+			},
+			{
+				"@KursNr": "Kurs22",
+				"Name": "Hot Iron",
+				"MaxTeilnehmer": 25,
+				"Wochentag": "Mittwoch",
+				"Uhrzeit": "09:30:47+05:00",
+				"Preis": 100
+			},
+			{
+				"@KursNr": "Kurs30",
+				"Name": "Zumba",
+				"Beschreibung": "Rythmisch Tanzen",
+				"MaxTeilnehmer": 10,
+				"Wochentag": "Dienstag",
+				"Uhrzeit": "13:30:47+05:00",
+				"Preis": 20
+			},
+			{
+				"@KursNr": "Kurs31",
+				"Name": "Personal Coaching",
+				"MaxTeilnehmer": 3,
+				"Wochentag": "Montag",
+				"Uhrzeit": "13:30:47+05:00",
+				"Preis": 500
+			}
+		],
+		"TrainingsPlan": [
+			{
+				"@KundeID": "Kunde11",
+				"@TrainerID": "Trainer11",
+				"@TrainingsPlanNr": "TP11",
+				"Type": "AusdauerPlan",
+				"istBetreut": "true"
+			},
+			{
+				"@KundeID": "Kunde22",
+				"@TrainerID": "Trainer22",
+				"@TrainingsPlanNr": "TP22",
+				"Type": "Ganzkörper",
+				"istBetreut": "false"
+			},
+			{
+				"@KundeID": "Kunde30",
+				"@TrainerID": "Trainer30",
+				"@TrainingsPlanNr": "TrainingsPlan30",
+				"Type": "Brust",
+				"istBetreut": "false"
+			},
+			{
+				"@KundeID": "Kunde30",
+				"@TrainerID": "Trainer31",
+				"@TrainingsPlanNr": "TrainingsPlan32",
+				"Type": "Beine",
+				"istBetreut": "true"
+			}
+		],
+		"Termin": [
+			{
+				"@GerätID": "Gerät11",
+				"@TrainingsPlanID": "TP11",
+				"@TerminNr": "Termin11",
+				"Datum": "2018-02-13",
+				"Uhrzeit": "09:30:47+05:00"
+			},
+			{
+				"@GerätID": "Gerät22",
+				"@TrainingsPlanID": "TP22",
+				"@TerminNr": "Termin22",
+				"Datum": "2018-08-13",
+				"Uhrzeit": "09:30:47+05:00"
+			},
+			{
+				"@GerätID": "Gerät30",
+				"@TrainingsPlanID": "TrainingsPlan30",
+				"@TerminNr": "Termin30",
+				"Datum": "2018-04-25",
+				"Uhrzeit": "09:30:47+05:00"
+			},
+			{
+				"@GerätID": "Gerät30",
+				"@TrainingsPlanID": "TrainingsPlan32",
+				"@TerminNr": "Termin31",
+				"Datum": "2018-04-25",
+				"Uhrzeit": "09:30:47+05:00"
+			}
+		],
+		"Gerät": [
+			{
+				"@GerätNr": "Gerät11",
+				"Gerätetyp": "Laufband",
+				"ZuletztGewartetAm": "2018-04-23"
+			},
+			{
+				"@GerätNr": "Gerät22",
+				"Gerätetyp": "Flachbank",
+				"ZuletztGewartetAm": "2015-08-13"
+			},
+			{
+				"@GerätNr": "Gerät30",
+				"Gerätetyp": "Stepper",
+				"ZuletztGewartetAm": "1999-08-13",
+				"InBetrieb": "true"
+			}
+		],
+		"Buchung": [
+			{
+				"@KursID": "Kurs11",
+				"@KundeID": "Kunde11",
+				"@BuchungsNr": "Buchung11"
+			},
+			{
+				"@KursID": "Kurs22",
+				"@KundeID": "Kunde22",
+				"@BuchungsNr": "Buchung22"
+			},
+			{
+				"@KursID": "Kurs30",
+				"@KundeID": "Kunde30",
+				"@BuchungsNr": "Buchung30"
+			},
+			{
+				"@KursID": "Kurs31",
+				"@KundeID": "Kunde11",
+				"@BuchungsNr": "Buchung31"
+			},
+			{
+				"@KursID": "Kurs31",
+				"@KundeID": "Kunde22",
+				"@BuchungsNr": "Buchung32"
+			},
+			{
+				"@KursID": "Kurs31",
+				"@KundeID": "Kunde30",
+				"@BuchungsNr": "Buchung33",
+				"Buchungsdatum": "2018-01-15"
+			}
+		],
+		"Anschrift": [
+			{
+				"@AnschriftNr": "Anschrift11",
+				"Straße": "Muster Str",
+				"HausNr": 5,
+				"Ort": "Musterort",
+				"PLZ": 12345,
+				"eMail": "e@mail.com"
+			},
+			{
+				"@AnschriftNr": "Anschrift12",
+				"Straße": "Superstr",
+				"HausNr": 2,
+				"Ort": "Superort",
+				"PLZ": 54321,
+				"eMail": "a@bc.com"
+			},
+			{
+				"@AnschriftNr": "Anschrift22",
+				"Straße": "Groove Street",
+				"HausNr": 8,
+				"Ort": "San Susanne",
+				"PLZ": 25698,
+				"eMail": "daniel.figia@gmail.de"
+			},
+			{
+				"@AnschriftNr": "Anschrift222",
+				"Straße": "Wall Street",
+				"HausNr": 9,
+				"Ort": "String",
+				"PLZ": 25485,
+				"eMail": "dagobert.bird@gspeicher.de"
+			},
+			{
+				"@AnschriftNr": "Anschrift30",
+				"Straße": "Friedrichstraße",
+				"HausNr": 10,
+				"Ort": "Lübeck",
+				"PLZ": 23562,
+				"eMail": "j.jürgensen@web.de"
+			},
+			{
+				"@AnschriftNr": "Anschrift31",
+				"Straße": "Hanseplatz",
+				"HausNr": 3,
+				"Ort": "Hamburg",
+				"PLZ": 23450,
+				"eMail": "k.petersen@gmail.com"
+			},
+			{
+				"@AnschriftNr": "Anschrift32",
+				"Straße": "Wetterstraße",
+				"HausNr": 30,
+				"Ort": "Hamburg",
+				"PLZ": 23450,
+				"eMail": "meier@gmail.com"
+			}
+		],
+		"Kunde": [
+			{
+				"@AnschriftID": "Anschrift12",
+				"@KundeNr": "Kunde11",
+				"Vorname": "Manfred",
+				"Nachname": "Mustermann",
+				"GebDatum": "1967-08-13",
+				"Geschlecht": "Männlich",
+				"Bankverbindung_Iban": 34523553
+			},
+			{
+				"@AnschriftID": "Anschrift22",
+				"@KundeNr": "Kunde22",
+				"Vorname": "Dagobert",
+				"Nachname": "Bird",
+				"GebDatum": "1995-06-13",
+				"Geschlecht": "männlich",
+				"Bankverbindung_Iban": "DE78111122223333"
+			},
+			{
+				"@AnschriftID": "Anschrift31",
+				"@KundeNr": "Kunde30",
+				"Vorname": "Klaus",
+				"Nachname": "Clausen",
+				"GebDatum": "1960-07-20",
+				"Geschlecht": "Männlich",
+				"Bankverbindung_Iban": "DE321456784345"
+			}
+		],
+		"Vertrag": [
+			{
+				"@KundeID": "Kunde11",
+				"@VertragNr": "Vertrag11",
+				"Vertragsart": "Guter Vertrag",
+				"abgeschlossenAm": "2017-04-18",
+				"Monatsbeitrag": 33.33
+			},
+			{
+				"@KundeID": "Kunde22",
+				"@VertragNr": "Vertrag22",
+				"Vertragsart": "Silber",
+				"abgeschlossenAm": "2010-08-13",
+				"Monatsbeitrag": 50
+			},
+			{
+				"@KundeID": "Kunde30",
+				"@VertragNr": "ID30",
+				"Vertragsart": "Jahresvertrag",
+				"abgeschlossenAm": "2016-08-13",
+				"gekündigtZum": "2018-08-13",
+				"Monatsbeitrag": 12.95
+			}
+		]
+	}
+}
