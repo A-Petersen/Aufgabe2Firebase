@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Aufgabe2Firebase" />
         <module name="myshop" />
         <module name="MyShop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Aufgabe2Firebase" target="8" />
       <module name="MyShop" target="9" />
       <module name="myshop" target="8" />
     </bytecodeTargetLevel>
