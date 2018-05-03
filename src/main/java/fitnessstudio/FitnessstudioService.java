@@ -126,7 +126,7 @@ public class FitnessstudioService {
 
         // Start HTTP server
         ResourceConfig rc = new ResourceConfig().packages("fitnessstudio");
-        HttpServer server = GrizzlyHttpServerFactory.createHttpServer(URI.create("http://localhost:8080"), rc, true);
+        HttpServer server = GrizzlyHttpServerFactory.createHttpServer(URI.create("http://localhost:8081"), rc, true);
         System.out.println("Hit enter to stop HTTP server.");
         System.in.read();
         server.shutdownNow();
