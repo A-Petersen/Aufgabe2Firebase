@@ -1,4 +1,4 @@
-package shop.resources;
+package fitnessstudio.resources;
 
 import jdk.nashorn.internal.objects.annotations.Getter;
 

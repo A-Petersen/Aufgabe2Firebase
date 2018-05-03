@@ -1,4 +1,4 @@
-package shop.resources;
+package fitnessstudio.resources;
 
 public class AnschriftResource {
 }

@@ -1,4 +1,4 @@
-package shop;
+package fitnessstudio;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
@@ -8,9 +8,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import shop.model.Anschrift;
-import shop.model.Kunde;
-import shop.model.Vertrag;
+import fitnessstudio.model.Anschrift;
+import fitnessstudio.model.Kunde;
+import fitnessstudio.model.Vertrag;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

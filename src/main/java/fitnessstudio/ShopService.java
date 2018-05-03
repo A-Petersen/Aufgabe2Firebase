@@ -1,4 +1,4 @@
-package shop;
+package fitnessstudio;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
@@ -11,7 +11,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-import shop.model.Product;
+import fitnessstudio.model.Product;
 
 import java.io.FileInputStream;
 import java.net.URI;
@@ -61,7 +61,7 @@ public class ShopService {
         });
 
         // Start HTTP server
-        ResourceConfig rc = new ResourceConfig().packages("shop");
+        ResourceConfig rc = new ResourceConfig().packages("fitnessstudio");
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(URI.create("http://localhost:8080"), rc, true);
         System.out.println("Hit enter to stop HTTP server.");
         System.in.read();

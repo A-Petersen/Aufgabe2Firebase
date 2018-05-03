@@ -1,8 +1,8 @@
-package shop.resources;
+package fitnessstudio.resources;
 
 import com.google.firebase.database.DatabaseReference;
-import shop.ShopService;
-import shop.model.Product;
+import fitnessstudio.ShopService;
+import fitnessstudio.model.Product;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;

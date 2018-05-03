@@ -1,4 +1,4 @@
-package shop.model;
+package fitnessstudio.model;
 
 import java.util.Date;
 
