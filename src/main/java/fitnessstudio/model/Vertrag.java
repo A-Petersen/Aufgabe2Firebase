@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Vertrag {
 
-    public Long VertragsNr;
+    public String VertragsNr;
 
     public String Vertragsart;
 
