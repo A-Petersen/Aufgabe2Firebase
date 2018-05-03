@@ -14,5 +14,4 @@ public class Vertrag {
 
     public float Monatsbeitrag;
 
-
 }
