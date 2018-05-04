@@ -2,10 +2,7 @@ package fitnessstudio.resources;
 
 import com.google.firebase.database.DatabaseReference;
 import fitnessstudio.FitnessstudioService;
-import fitnessstudio.ShopService;
 import fitnessstudio.model.Kunde;
-import fitnessstudio.model.Product;
-import jdk.nashorn.internal.objects.annotations.Getter;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;

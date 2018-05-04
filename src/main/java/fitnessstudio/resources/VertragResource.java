@@ -1,8 +1,6 @@
 package fitnessstudio.resources;
 
 import fitnessstudio.FitnessstudioService;
-import fitnessstudio.ShopService;
-import fitnessstudio.model.Product;
 import fitnessstudio.model.Vertrag;
 
 import javax.ws.rs.*;
