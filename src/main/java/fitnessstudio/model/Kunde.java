@@ -5,16 +5,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement // required for XML binding
 public class Kunde {
 
-    public String kundenNr;
+    public String AnschriftID;
 
-    public String vorname;
+    public String KundeNr;
 
-    public String nachname;
+    public String Bankverbindung_Iban;
 
-    public String geschlecht;
+    public String Geschlecht;
 
-    public String gebDatum;
+    public String Nachname;
 
-    public String bankverbindung_Iban;
+    public String Vorname;
+
+    public String GebDatum;
 
 }

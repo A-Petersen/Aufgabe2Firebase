@@ -90,19 +90,19 @@ public class FitnessstudioService {
             @Override
             public void onChildAdded(DataSnapshot data, String prevChildKey) {
                 Kunde kunde = data.getValue(Kunde.class);
-                kunden.put(kunde.kundenNr, kunde);
+                kunden.put(kunde.KundeNr, kunde);
             }
 
             @Override
             public void onChildChanged(DataSnapshot data, String prevChildKey) {
                 Kunde kunde = data.getValue(Kunde.class);
-                kunden.put(kunde.kundenNr, kunde);
+                kunden.put(kunde.KundeNr, kunde);
             }
 
             @Override
             public void onChildRemoved(DataSnapshot data) {
                 Kunde kunde = data.getValue(Kunde.class);
-                kunden.remove(kunde.kundenNr, kunde);
+                kunden.remove(kunde.KundeNr, kunde);
             }
 
             @Override

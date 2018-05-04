@@ -26,10 +26,10 @@ public class KundenResource {
     public Response postKunden(Kunde kunde, @Context UriInfo uriInfo) {
 
         DatabaseReference ref = FitnessstudioService.kundenRef.push();
-        kunde.kundenNr = ref.getKey();
+        kunde.KundeNr = ref.getKey();
         ref.setValueAsync(kunde);
 
-        URI uri = uriInfo.getAbsolutePathBuilder().path(kunde.kundenNr).build();
+        URI uri = uriInfo.getAbsolutePathBuilder().path(kunde.KundeNr).build();
 
         return Response.created(uri).entity(kunde).build(); // 201
     }
