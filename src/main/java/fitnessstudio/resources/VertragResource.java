@@ -1,8 +1,6 @@
 package fitnessstudio.resources;
 
 import fitnessstudio.FitnessstudioService;
-import fitnessstudio.ShopService;
-import fitnessstudio.model.Product;
 import fitnessstudio.model.Vertrag;
 
 import javax.ws.rs.*;
@@ -40,7 +38,7 @@ public class VertragResource {
             return Response.status(404).build(); // 404
         } else {
             vertrag.VertragsNr = VertragsNr;
-            ShopService.productsRef.child(VertragsNr).setValueAsync(VertragsNr);
+            FitnessstudioService.vertraegeRef.child(VertragsNr).setValueAsync(VertragsNr);
             return Response.noContent().build(); // 204
         }
     }
