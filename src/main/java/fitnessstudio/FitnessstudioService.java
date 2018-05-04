@@ -117,19 +117,19 @@ public class FitnessstudioService {
             @Override
             public void onChildAdded(DataSnapshot data, String prevChildKey) {
                 Vertrag vertrag = data.getValue(Vertrag.class);
-                vertraege.put(vertrag.VertragsNr, vertrag);
+                vertraege.put(vertrag.VertragNr, vertrag);
             }
 
             @Override
             public void onChildChanged(DataSnapshot data, String prevChildKey) {
                 Vertrag vertrag = data.getValue(Vertrag.class);
-                vertraege.put(vertrag.VertragsNr, vertrag);
+                vertraege.put(vertrag.VertragNr, vertrag);
             }
 
             @Override
             public void onChildRemoved(DataSnapshot data) {
                 Vertrag vertrag = data.getValue(Vertrag.class);
-                vertraege.remove(vertrag.VertragsNr, vertrag);
+                vertraege.remove(vertrag.VertragNr, vertrag);
             }
 
             @Override
