@@ -37,7 +37,7 @@ public class VertragResource {
         if (!exists) {
             return Response.status(404).build(); // 404
         } else {
-            vertrag.VertragsNr = VertragsNr;
+            vertrag.VertragNr = VertragsNr;
             FitnessstudioService.vertraegeRef.child(VertragsNr).setValueAsync(VertragsNr);
             return Response.noContent().build(); // 204
         }
@@ -45,7 +45,6 @@ public class VertragResource {
 
     @DELETE
     public Response deleteVertrag() {
-        // Delete product with id provided in the URI
         FitnessstudioService.vertraegeRef.child(VertragsNr).removeValueAsync();
         return Response.noContent().build(); // 204
     }
