@@ -18,6 +18,48 @@
     <orderEntry type="library" name="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER" level="application" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="Maven: com.google.firebase:firebase-admin:5.8.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.api-client:google-api-client:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.oauth-client:google-oauth-client:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.http-client:google-http-client-jackson2:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.api-client:google-api-client-gson:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.http-client:google-http-client-gson:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.http-client:google-http-client:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-storage:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-core:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.api:gax:1.8.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java-util:3.3.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.api.grpc:proto-google-common-protos:0.1.20" level="project" />
+    <orderEntry type="library" name="Maven: com.google.api.grpc:proto-google-iam-v1:0.1.20" level="project" />
+    <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-core-http:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.http-client:google-http-client-appengine:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.http-client:google-http-client-jackson:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.apis:google-api-services-storage:v1-rev108-1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-firestore:0.25.0-beta" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-tcnative-boringssl-static:2.0.3.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-core-grpc:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.3.1" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-protobuf:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-protobuf-lite:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-context:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.api:gax-grpc:0.25.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.api.grpc:proto-google-cloud-firestore-v1beta1:0.1.20" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-netty:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-core:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.0.19" level="project" />
+    <orderEntry type="library" name="Maven: io.opencensus:opencensus-api:0.5.1" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-http2:4.1.14.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler-proxy:4.1.14.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-socks:4.1.14.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-stub:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-auth:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-http:4.1.14.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.14.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.14.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.14.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.14.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.14.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.14.Final" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-server:2.26" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-common:2.26" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.1" level="project" />

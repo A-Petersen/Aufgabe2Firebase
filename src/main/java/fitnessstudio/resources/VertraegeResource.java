@@ -13,7 +13,6 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.Collection;
 
-@Path("/vertraege")
 public class VertraegeResource {
 
     @GET
@@ -28,10 +27,10 @@ public class VertraegeResource {
 
         // Product is saved with a new generated id, which is returned in the response location URI
         DatabaseReference ref = FitnessstudioService.vertraegeRef.push();
-        vertrag.VertragsNr = ref.getKey();
+        vertrag.VertragNr = ref.getKey();
         ref.setValueAsync(vertrag);
 
-        URI uri = uriInfo.getAbsolutePathBuilder().path(vertrag.VertragsNr).build();
+        URI uri = uriInfo.getAbsolutePathBuilder().path(vertrag.VertragNr).build();
 
         return Response.created(uri).entity(vertrag).build(); // 201
     }
