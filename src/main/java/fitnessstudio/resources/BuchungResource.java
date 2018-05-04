@@ -1,7 +1,6 @@
 package fitnessstudio.resources;
 
 import fitnessstudio.FitnessstudioService;
-import fitnessstudio.model.Anschrift;
 import fitnessstudio.model.Buchung;
 
 import javax.ws.rs.DELETE;

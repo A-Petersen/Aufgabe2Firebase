@@ -48,9 +48,6 @@ public class FitnessstudioService {
             @Override
             public void onChildAdded(DataSnapshot data, String prevChildKey) {
                 Anschrift anschrift = data.getValue(Anschrift.class);
-                System.out.println("ID: " + anschrift.AnschriftNr);
-                System.out.println("Ort: " + anschrift.Ort);
-                System.out.println("E-Mail: " + anschrift.eMail);
                 anschriften.put(anschrift.AnschriftNr, anschrift);
             }
 
@@ -79,9 +76,6 @@ public class FitnessstudioService {
             @Override
             public void onChildAdded(DataSnapshot data, String prevChildKey) {
                 Kunde kunde = data.getValue(Kunde.class);
-                System.out.println("ID: " + kunde.KundeNr);
-                System.out.println("Nachname: " + kunde.Nachname);
-                System.out.println("Geschlecht: " + kunde.Geschlecht);
                 kunden.put(kunde.KundeNr, kunde);
             }
 
@@ -109,9 +103,6 @@ public class FitnessstudioService {
             @Override
             public void onChildAdded(DataSnapshot data, String prevChildKey) {
                 Vertrag vertrag = data.getValue(Vertrag.class);
-                System.out.println("ID: " + vertrag.VertragNr);
-                System.out.println("Vertragsart: " + vertrag.Vertragsart);
-                System.out.println("Monatsbeitrag: " + vertrag.Monatsbeitrag);
                 vertraege.put(vertrag.VertragNr, vertrag);
             }
 
