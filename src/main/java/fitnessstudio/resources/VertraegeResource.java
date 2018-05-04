@@ -2,7 +2,6 @@ package fitnessstudio.resources;
 
 import com.google.firebase.database.DatabaseReference;
 import fitnessstudio.FitnessstudioService;
-import fitnessstudio.model.Product;
 import fitnessstudio.model.Vertrag;
 
 import javax.ws.rs.*;

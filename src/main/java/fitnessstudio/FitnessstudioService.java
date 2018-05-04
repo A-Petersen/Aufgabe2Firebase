@@ -5,6 +5,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.*;
 import fitnessstudio.model.Anschrift;
+import fitnessstudio.model.Buchung;
 import fitnessstudio.model.Kunde;
 import fitnessstudio.model.Vertrag;
 import org.glassfish.grizzly.http.server.HttpServer;
@@ -26,6 +27,8 @@ public class FitnessstudioService {
     public static DatabaseReference kundenRef;
     public static Map<String, Vertrag> vertraege = new HashMap<>();
     public static DatabaseReference vertraegeRef;
+    public static Map<String, Buchung> buchungen = new HashMap<>();
+    public static DatabaseReference buchungenRef;
 
     public static void main(String[] args) throws IOException, FileNotFoundException {
 
@@ -33,11 +36,12 @@ public class FitnessstudioService {
         FileInputStream serviceAccount = new FileInputStream("firebase.json");
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                .setDatabaseUrl("https://aufgabe2firebase.firebaseio.com").build();
+                .setDatabaseUrl("https://aufgabe2firebase.firebaseio.com/").build();
         FirebaseApp.initializeApp(options);
         anschriftenRef = FirebaseDatabase.getInstance().getReference("Anschrift");
         kundenRef = FirebaseDatabase.getInstance().getReference("Kunde");
         vertraegeRef = FirebaseDatabase.getInstance().getReference("Vertrag");
+        buchungenRef = FirebaseDatabase.getInstance().getReference("Buchung");
 
         // Register change listener on database
         anschriftenRef.addChildEventListener(new ChildEventListener() {
@@ -121,6 +125,33 @@ public class FitnessstudioService {
             public void onChildRemoved(DataSnapshot data) {
                 Vertrag vertrag = data.getValue(Vertrag.class);
                 vertraege.remove(vertrag.VertragNr, vertrag);
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot data, String prevChildKey) {}
+
+            @Override
+            public void onCancelled(DatabaseError error) {}
+        });
+
+        // Register change listener on database
+        buchungenRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot data, String prevChildKey) {
+                Buchung buchung = data.getValue(Buchung.class);
+                buchungen.put(buchung.BuchungNr, buchung);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot data, String prevChildKey) {
+                Buchung buchung = data.getValue(Buchung.class);
+                buchungen.put(buchung.BuchungNr, buchung);
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot data) {
+                Buchung buchung = data.getValue(Buchung.class);
+                buchungen.remove(buchung.BuchungNr);
             }
 
             @Override

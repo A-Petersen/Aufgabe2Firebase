@@ -1,6 +1,7 @@
 package fitnessstudio.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
 @XmlRootElement // required for XML binding
 public class Kunde {
@@ -19,6 +20,6 @@ public class Kunde {
 
     public String Vorname;
 
-
+    public List<Buchung> Buchungen;
 
 }
