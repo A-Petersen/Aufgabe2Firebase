@@ -7,11 +7,11 @@ public class Anschrift {
 
     public String AnschriftNr;
 
-    public String strasse;
+    public String Straße;
 
-    public Integer hausnummer;
+    public Integer HausNr;
 
-    public Integer plz;
+    public Integer PLZ;
 
     public String Ort;
 

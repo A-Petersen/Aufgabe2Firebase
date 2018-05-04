@@ -34,7 +34,7 @@ public class KundeResource {
         if (!exists) {
             return Response.status(404).build();
         } else {
-            kunde.kundenNr = kundenNr;
+            kunde.KundeNr = kundenNr;
             FitnessstudioService.kundenRef.child(kundenNr).setValueAsync(kunde);
             return Response.noContent().build();
         }
