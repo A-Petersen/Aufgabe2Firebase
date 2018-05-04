@@ -40,7 +40,7 @@ public class VertragResource {
             return Response.status(404).build(); // 404
         } else {
             vertrag.VertragsNr = VertragsNr;
-            ShopService.productsRef.child(VertragsNr).setValueAsync(VertragsNr);
+            FitnessstudioService.vertraegeRef.child(VertragsNr).setValueAsync(VertragsNr);
             return Response.noContent().build(); // 204
         }
     }
