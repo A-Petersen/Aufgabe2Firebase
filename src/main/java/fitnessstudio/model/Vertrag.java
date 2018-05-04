@@ -12,9 +12,9 @@ public class Vertrag {
 
     public String Vertragsart;
 
-    public Date ageschlossenAm;
+    public String abgeschlossenAm;
 
-    public Date gekündigtZum;
+    public String gekündigtZum;
 
     public float Monatsbeitrag;
 

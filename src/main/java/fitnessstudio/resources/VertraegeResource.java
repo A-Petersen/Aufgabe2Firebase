@@ -13,6 +13,7 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.Collection;
 
+@Path("/vertraege")
 public class VertraegeResource {
 
     @GET
