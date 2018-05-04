@@ -36,19 +36,18 @@ public class FitnessstudioService {
                 .setDatabaseUrl("https://aufgabe2firebase.firebaseio.com").build();
         FirebaseApp.initializeApp(options);
         anschriftenRef = FirebaseDatabase.getInstance().getReference("Anschrift");
-        kundenRef = FirebaseDatabase.getInstance().getReference("kunde");
+        kundenRef = FirebaseDatabase.getInstance().getReference("Kunde");
         vertraegeRef = FirebaseDatabase.getInstance().getReference("Vertrag");
 
         // Register change listener on database
         anschriftenRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot data, String prevChildKey) {
-                Anschrift anschrift1 = data.getValue(Anschrift.class);
                 Anschrift anschrift = data.getValue(Anschrift.class);
-                System.out.println("ID: " + anschrift.AnschriftNr);
-                System.out.println("Ort: " + anschrift.Ort);
-                System.out.println("E-Mail: " + anschrift.eMail);
-                anschriften.put(anschrift1.AnschriftNr, anschrift1);
+//                System.out.println("ID: " + anschrift.AnschriftNr);
+//                System.out.println("Ort: " + anschrift.Ort);
+//                System.out.println("E-Mail: " + anschrift.eMail);
+                anschriften.put(anschrift.AnschriftNr, anschrift);
             }
 
             @Override
@@ -70,26 +69,15 @@ public class FitnessstudioService {
             public void onCancelled(DatabaseError error) {}
         });
 
-//        anschriftenRef.addValueEventListener(new ValueEventListener() {
-//             @Override
-//             public void onDataChange(DataSnapshot dataSnapshot) {
-//                 Anschrift anschrift = dataSnapshot.getValue(Anschrift.class);
-//                 System.out.println(anschrift);
-//             }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                System.out.println("The read failed: " + databaseError.getCode());
-//            }
-//        });
-
-
 
             // Register change listener on database
         kundenRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot data, String prevChildKey) {
                 Kunde kunde = data.getValue(Kunde.class);
+                System.out.println("ID: " + kunde.KundeNr);
+                System.out.println("Ort: " + kunde.Nachname);
+                System.out.println("E-Mail: " + kunde.Geschlecht);
                 kunden.put(kunde.KundeNr, kunde);
             }
 
