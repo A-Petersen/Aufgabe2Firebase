@@ -17,7 +17,7 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.Collection;
 
-@Path("/products")
+@Path("/Kunde")
 public class AnschriftenResource {
 
     @GET
@@ -40,8 +40,8 @@ public class AnschriftenResource {
         return Response.created(uri).entity(anschrift).build(); // 201
     }
 
-    @Path("{id}")
-    public AnschriftResource getAnschrift(@PathParam("id") String id) {
+    @Path("{AnschriftId}")
+    public AnschriftResource getAnschrift(@PathParam("AnschriftId") String id) {
         return new AnschriftResource(id);
     }
 
