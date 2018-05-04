@@ -34,8 +34,8 @@ public class KundenResource {
         return Response.created(uri).entity(kunde).build(); // 201
     }
 
-    @Path("{kundenNr}")
-    public KundeResource getKunden(@PathParam("kundenNr") String kundenNr) {
+    @Path("{id}")
+    public KundeResource getKunden(@PathParam("id") String kundenNr) {
         return new KundeResource(kundenNr);
     }
 

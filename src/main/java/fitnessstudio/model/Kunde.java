@@ -7,16 +7,18 @@ public class Kunde {
 
     public String AnschriftID;
 
-    public String KundeNr;
-
     public String Bankverbindung_Iban;
 
+    public String GebDatum;
+
     public String Geschlecht;
+
+    public String KundeNr;
 
     public String Nachname;
 
     public String Vorname;
 
-    public String GebDatum;
+
 
 }
