@@ -3,11 +3,7 @@ package fitnessstudio;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.*;
 import fitnessstudio.model.Anschrift;
 import fitnessstudio.model.Kunde;
 import fitnessstudio.model.Vertrag;
@@ -39,28 +35,32 @@ public class FitnessstudioService {
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .setDatabaseUrl("https://aufgabe2firebase.firebaseio.com").build();
         FirebaseApp.initializeApp(options);
-        anschriftenRef = FirebaseDatabase.getInstance().getReference("anschriften");
-        kundenRef = FirebaseDatabase.getInstance().getReference("kunden");
-        vertraegeRef = FirebaseDatabase.getInstance().getReference("vertraege");
+        anschriftenRef = FirebaseDatabase.getInstance().getReference("Anschrift");
+        kundenRef = FirebaseDatabase.getInstance().getReference("kunde");
+        vertraegeRef = FirebaseDatabase.getInstance().getReference("Vertrag");
 
         // Register change listener on database
         anschriftenRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot data, String prevChildKey) {
+                Anschrift anschrift1 = data.getValue(Anschrift.class);
                 Anschrift anschrift = data.getValue(Anschrift.class);
-                anschriften.put(anschrift.anschriftId, anschrift);
+                System.out.println("ID: " + anschrift.AnschriftNr);
+                System.out.println("Ort: " + anschrift.Ort);
+                System.out.println("E-Mail: " + anschrift.eMail);
+                anschriften.put(anschrift1.AnschriftNr, anschrift1);
             }
 
             @Override
             public void onChildChanged(DataSnapshot data, String prevChildKey) {
                 Anschrift anschrift = data.getValue(Anschrift.class);
-                anschriften.put(anschrift.anschriftId, anschrift);
+                anschriften.put(anschrift.AnschriftNr, anschrift);
             }
 
             @Override
             public void onChildRemoved(DataSnapshot data) {
                 Anschrift anschrift = data.getValue(Anschrift.class);
-                anschriften.remove(anschrift.anschriftId);
+                anschriften.remove(anschrift.AnschriftNr);
             }
 
             @Override
@@ -70,7 +70,22 @@ public class FitnessstudioService {
             public void onCancelled(DatabaseError error) {}
         });
 
-        // Register change listener on database
+//        anschriftenRef.addValueEventListener(new ValueEventListener() {
+//             @Override
+//             public void onDataChange(DataSnapshot dataSnapshot) {
+//                 Anschrift anschrift = dataSnapshot.getValue(Anschrift.class);
+//                 System.out.println(anschrift);
+//             }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                System.out.println("The read failed: " + databaseError.getCode());
+//            }
+//        });
+
+
+
+            // Register change listener on database
         kundenRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot data, String prevChildKey) {

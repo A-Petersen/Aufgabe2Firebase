@@ -34,7 +34,7 @@ public class AnschriftResource {
         if (FitnessstudioService.anschriften.get(id) == null) { //if exists
             return Response.status(404).build();
         } else {
-            anschrift.anschriftId = id;
+            anschrift.AnschriftNr = id;
             FitnessstudioService.anschriftenRef.child(id).setValueAsync(anschrift);
             return Response.noContent().build();
         }

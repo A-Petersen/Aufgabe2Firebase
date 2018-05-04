@@ -17,7 +17,7 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.Collection;
 
-@Path("/products")
+@Path("/anschriften")
 public class AnschriftenResource {
 
     @GET
@@ -32,10 +32,10 @@ public class AnschriftenResource {
 
         // Product is saved with a new generated id, which is returned in the response location URI
         DatabaseReference ref = FitnessstudioService.anschriftenRef.push();
-        anschrift.anschriftId = ref.getKey();
+        anschrift.AnschriftNr = ref.getKey();
         ref.setValueAsync(anschrift);
 
-        URI uri = uriInfo.getAbsolutePathBuilder().path(anschrift.anschriftId).build();
+        URI uri = uriInfo.getAbsolutePathBuilder().path(anschrift.AnschriftNr).build();
 
         return Response.created(uri).entity(anschrift).build(); // 201
     }

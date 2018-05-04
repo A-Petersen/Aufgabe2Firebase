@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Anschrift {
 
-    public String anschriftId;
+    public String AnschriftNr;
 
     public String strasse;
 
@@ -13,11 +13,9 @@ public class Anschrift {
 
     public Integer plz;
 
-    public String ort;
+    public String Ort;
 
-    public String email;
-
-    public Kunde kunde;
+    public String eMail;
 
 
 
