@@ -21,7 +21,6 @@ import java.util.Collection;
 public class AnschriftenResource {
 
     @GET
-
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Collection<Anschrift> getAnschriften() {
         return FitnessstudioService.anschriften.values();

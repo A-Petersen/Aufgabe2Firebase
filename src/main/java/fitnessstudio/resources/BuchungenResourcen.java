@@ -13,11 +13,10 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.Collection;
 
-@Path("/buchungen")
+@Path("/kunden/buchungen")
 public class BuchungenResourcen {
 
     @GET
-
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Collection<Buchung> getBuchungen() {
         return FitnessstudioService.buchungen.values();

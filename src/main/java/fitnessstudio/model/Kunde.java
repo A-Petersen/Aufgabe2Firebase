@@ -1,5 +1,7 @@
 package fitnessstudio.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
@@ -20,6 +22,8 @@ public class Kunde {
 
     public String Vorname;
 
+    @XmlElementWrapper(name="Buchungen")
+    @XmlElement(name="Buchungen")
     public List<Buchung> Buchungen;
 
 }

@@ -2,7 +2,7 @@ package fitnessstudio.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+@XmlRootElement(name="Buchungen")
 public class Buchung {
 
     public String BuchungNr;
