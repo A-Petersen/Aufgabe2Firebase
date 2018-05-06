@@ -9,5 +9,5 @@ public class Buchung {
 
     public String Datum;
 
-    public String Name;
+    public String Kurs;
 }

@@ -35,8 +35,8 @@ public class VertraegeResource {
         return Response.created(uri).entity(vertrag).build(); // 201
     }
 
-    @Path("{VertragsNr}")
-    public VertragResource getVertrag(@PathParam("VertragsNr") String VertragsNr) {
+    @Path("{id}")
+    public VertragResource getVertrag(@PathParam("id") String VertragsNr) {
         return new VertragResource(VertragsNr);
     }
 }

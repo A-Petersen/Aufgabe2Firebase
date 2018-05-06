@@ -41,7 +41,7 @@ public class FitnessstudioService {
         anschriftenRef = FirebaseDatabase.getInstance().getReference("Anschrift");
         kundenRef = FirebaseDatabase.getInstance().getReference("Kunde");
         vertraegeRef = FirebaseDatabase.getInstance().getReference("Vertrag");
-        buchungenRef = FirebaseDatabase.getInstance().getReference("kunden/buchungen");
+        buchungenRef = FirebaseDatabase.getInstance().getReference("Kunde").child("Buchungen");
 
         // Register change listener on database
         anschriftenRef.addChildEventListener(new ChildEventListener() {
