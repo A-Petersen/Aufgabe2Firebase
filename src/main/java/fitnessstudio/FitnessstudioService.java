@@ -41,7 +41,7 @@ public class FitnessstudioService {
         anschriftenRef = FirebaseDatabase.getInstance().getReference("Anschrift");
         kundenRef = FirebaseDatabase.getInstance().getReference("Kunde");
         vertraegeRef = FirebaseDatabase.getInstance().getReference("Vertrag");
-        buchungenRef = FirebaseDatabase.getInstance().getReference("Kunde").child("Buchungen");
+        buchungenRef = FirebaseDatabase.getInstance().getReference("Buchungen");
 
         // Register change listener on database
         anschriftenRef.addChildEventListener(new ChildEventListener() {
@@ -131,6 +131,7 @@ public class FitnessstudioService {
             public void onChildAdded(DataSnapshot data, String prevChildKey) {
                 Buchung buchung = data.getValue(Buchung.class);
                 buchungen.put(buchung.BuchungNr, buchung);
+                System.out.println(buchung.Kurs);
             }
 
             @Override

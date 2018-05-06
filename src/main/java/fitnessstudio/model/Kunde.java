@@ -26,4 +26,5 @@ public class Kunde {
     @XmlElement(name="Buchungen")
     public List<Buchung> Buchungen;
 
+
 }
