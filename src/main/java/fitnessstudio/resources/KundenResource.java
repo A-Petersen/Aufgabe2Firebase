@@ -13,6 +13,7 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Path("/kunden")
@@ -61,9 +62,9 @@ public class KundenResource {
 
         @POST
         @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-        public Response postBuchungen(Buchung buchung, @Context UriInfo uriInfo) {
+        public Response postBuchungen(Buchung buchung, @PathParam("id") String id, @Context UriInfo uriInfo) {
 
-            DatabaseReference ref = FitnessstudioService.kundenRef.push();
+            DatabaseReference ref = FitnessstudioService.buchungenRefMap.get(id).push();
             buchung.BuchungNr = ref.getKey();
             ref.setValueAsync(buchung);
 
@@ -71,5 +72,38 @@ public class KundenResource {
 
             return Response.created(uri).entity(buchung).build(); // 201
         }
+
+        @GET
+        @Path("/{buchungNr}")
+        @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+        public Response getBuchung(@PathParam("id") String id, @PathParam("buchungNr") String buchungNr) {
+
+            System.out.println(buchungNr + "-" + id);
+
+            Buchung output = null;
+            List<Buchung> searchBuchung = FitnessstudioService.buchungen.get(id);
+            for (Buchung b : searchBuchung) {
+                if (b.BuchungNr.equals(buchungNr)) output = b;
+            }
+            if (output == null) return Response.status(404).build();
+            return Response.ok(output).build();
+        }
+//
+//        @PUT
+//        @Path("/{buchungNr}")
+//        @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+//        public Response putBuchung(Buchung buchung, @PathParam("id") String id, @PathParam("buchungNr") String buchungNr, @Context UriInfo uriInfo) {
+//            Buchung output = null;
+//            List<Buchung> searchBuchung = FitnessstudioService.buchungen.get(id);
+//            boolean exists = searchBuchung.contains(buchung) ? true : false;
+//
+//            if (!exists) {
+//                return Response.status(404).build();
+//            } else {
+//                buchung.BuchungNr = kundenNr;
+//                FitnessstudioService.buchungenRefMap.get(id).child(buchungNr).setValueAsync(kunde);
+//                return Response.noContent().build();
+//            }
+//        }
     }
 }
