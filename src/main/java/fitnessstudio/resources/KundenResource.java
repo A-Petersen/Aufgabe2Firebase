@@ -88,22 +88,32 @@ public class KundenResource {
             if (output == null) return Response.status(404).build();
             return Response.ok(output).build();
         }
-//
-//        @PUT
-//        @Path("/{buchungNr}")
-//        @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-//        public Response putBuchung(Buchung buchung, @PathParam("id") String id, @PathParam("buchungNr") String buchungNr, @Context UriInfo uriInfo) {
-//            Buchung output = null;
-//            List<Buchung> searchBuchung = FitnessstudioService.buchungen.get(id);
-//            boolean exists = searchBuchung.contains(buchung) ? true : false;
-//
-//            if (!exists) {
-//                return Response.status(404).build();
-//            } else {
-//                buchung.BuchungNr = kundenNr;
-//                FitnessstudioService.buchungenRefMap.get(id).child(buchungNr).setValueAsync(kunde);
-//                return Response.noContent().build();
-//            }
-//        }
+
+        @PUT
+        @Path("/{buchungNr}")
+        @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+        public Response putBuchung(Buchung buchung, @PathParam("id") String id, @PathParam("buchungNr") String buchungNr, @Context UriInfo uriInfo) {
+            List<Buchung> searchBuchung = FitnessstudioService.buchungen.get(id);
+            boolean exists = false;
+            for (Buchung b : searchBuchung) {
+                if (b.BuchungNr.equals(buchungNr)) exists = true;
+            }
+            System.out.println("/" + buchungNr + " - " + buchung.BuchungNr + " - exists:" + exists);
+            if (!exists) {
+                System.out.println("doesn't exist.");
+                return Response.status(404).build();
+            } else {
+                FitnessstudioService.buchungenRefMap.get(id).child(buchungNr).setValueAsync(buchung);
+                return Response.noContent().build();
+            }
+        }
+
+        @DELETE
+        @Path("/{buchungNr}")
+        public Response deleteBuchung(@PathParam("id") String id, @PathParam("buchungNr") String buchungNr) {
+            System.out.println("ID:" + id + "deleteBuchung:" + buchungNr);
+            FitnessstudioService.buchungenRefMap.get(id).child(buchungNr).removeValueAsync();
+            return Response.noContent().build();
+        }
     }
 }
