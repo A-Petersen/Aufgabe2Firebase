@@ -1,8 +1,5 @@
 package fitnessstudio.model;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement(name="Buchungen")
 public class Buchung {
 
     public String BuchungNr;
@@ -10,4 +7,8 @@ public class Buchung {
     public String Datum;
 
     public String Kurs;
+
+    public Buchung () {
+        this.Datum = "meh";
+    }
 }

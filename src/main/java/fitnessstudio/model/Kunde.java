@@ -3,7 +3,9 @@ package fitnessstudio.model;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @XmlRootElement // required for XML binding
 public class Kunde {
@@ -22,9 +24,5 @@ public class Kunde {
 
     public String Vorname;
 
-    @XmlElementWrapper(name="Buchungen")
-    @XmlElement(name="Buchungen")
     public List<Buchung> Buchungen;
-
-
 }

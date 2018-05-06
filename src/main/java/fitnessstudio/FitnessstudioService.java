@@ -17,6 +17,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public class FitnessstudioService {
@@ -27,8 +29,9 @@ public class FitnessstudioService {
     public static DatabaseReference kundenRef;
     public static Map<String, Vertrag> vertraege = new HashMap<>();
     public static DatabaseReference vertraegeRef;
-    public static Map<String, Buchung> buchungen = new HashMap<>();
-    public static DatabaseReference buchungenRef;
+
+    public static Map<String, DatabaseReference> buchungenRefMap = new HashMap<>();
+    public static Map<String, List<Buchung>> buchungen = new HashMap<>();
 
     public static void main(String[] args) throws IOException, FileNotFoundException {
 
@@ -38,10 +41,9 @@ public class FitnessstudioService {
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .setDatabaseUrl("https://aufgabe2firebase.firebaseio.com/").build();
         FirebaseApp.initializeApp(options);
-        anschriftenRef = FirebaseDatabase.getInstance().getReference("Anschrift");
-        kundenRef = FirebaseDatabase.getInstance().getReference("Kunde");
-        vertraegeRef = FirebaseDatabase.getInstance().getReference("Vertrag");
-        buchungenRef = FirebaseDatabase.getInstance().getReference("Buchungen");
+        anschriftenRef = FirebaseDatabase.getInstance().getReference("/Anschrift");
+        kundenRef = FirebaseDatabase.getInstance().getReference("/Kunde");
+        vertraegeRef = FirebaseDatabase.getInstance().getReference("/Vertrag");
 
         // Register change listener on database
         anschriftenRef.addChildEventListener(new ChildEventListener() {
@@ -77,6 +79,9 @@ public class FitnessstudioService {
             public void onChildAdded(DataSnapshot data, String prevChildKey) {
                 Kunde kunde = data.getValue(Kunde.class);
                 kunden.put(kunde.KundeNr, kunde);
+                System.out.println(kunde.Buchungen);
+                buchungen.put(kunde.KundeNr, kunde.Buchungen);
+                buchungenRefMap.put(kunde.KundeNr, FirebaseDatabase.getInstance().getReference("/Kunde").child(kunde.KundeNr).child("/Buchungen"));
             }
 
             @Override
@@ -126,32 +131,32 @@ public class FitnessstudioService {
         });
 
         // Register change listener on database
-        buchungenRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot data, String prevChildKey) {
-                Buchung buchung = data.getValue(Buchung.class);
-                buchungen.put(buchung.BuchungNr, buchung);
-                System.out.println(buchung.Kurs);
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot data, String prevChildKey) {
-                Buchung buchung = data.getValue(Buchung.class);
-                buchungen.put(buchung.BuchungNr, buchung);
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot data) {
-                Buchung buchung = data.getValue(Buchung.class);
-                buchungen.remove(buchung.BuchungNr , buchung);
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot data, String prevChildKey) {}
-
-            @Override
-            public void onCancelled(DatabaseError error) {}
-        });
+//        buchungenRef.addChildEventListener(new ChildEventListener() {
+//            @Override
+//            public void onChildAdded(DataSnapshot data, String prevChildKey) {
+//                Buchung buchung = data.getValue(Buchung.class);
+//                buchungen.put(buchung.BuchungNr, buchung);
+//                System.out.println(buchung.Kurs);
+//            }
+//
+//            @Override
+//            public void onChildChanged(DataSnapshot data, String prevChildKey) {
+//                Buchung buchung = data.getValue(Buchung.class);
+//                buchungen.put(buchung.BuchungNr, buchung);
+//            }
+//
+//            @Override
+//            public void onChildRemoved(DataSnapshot data) {
+//                Buchung buchung = data.getValue(Buchung.class);
+//                buchungen.remove(buchung.BuchungNr , buchung);
+//            }
+//
+//            @Override
+//            public void onChildMoved(DataSnapshot data, String prevChildKey) {}
+//
+//            @Override
+//            public void onCancelled(DatabaseError error) {}
+//        });
 
         // Start HTTP server
         ResourceConfig rc = new ResourceConfig().packages("fitnessstudio");
